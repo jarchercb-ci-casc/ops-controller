@@ -5,6 +5,15 @@ items:
 - kind: folder
   displayName: controller-jobs
   name: controller-jobs
+  properties:
+  - envVars: {}
+  - kubernetesFolderProperty: {}
+  - itemRestrictions:
+      allowedTypes:
+      - org.jenkinsci.plugins.workflow.job.WorkflowJob
+      - jenkins.branch.OrganizationFolder
+      - org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject
+      filter: true
   items:
   - kind: organizationFolder
     displayName: cbci-casc-automation
@@ -24,7 +33,7 @@ items:
         - headWildcardFilter:
             excludes: ''
             includes: main
-        repoOwner: jarchercb-ci-casc
+        repoOwner: cbci-casc-workshop
         credentialsId: cloudbees-ci-casc-workshop-github-app
     projectFactories:
     - customMultiBranchProjectFactory:
@@ -39,7 +48,7 @@ items:
                     userRemoteConfigs:
                     - userRemoteConfig:
                         credentialsId: cloudbees-ci-casc-workshop-github-app
-                        url: https://github.com/jarchercb-ci-casc/ops-controller.git
+                        url: https://github.com/cbci-casc-workshop/ops-controller.git
                     branches:
                     - branchSpec:
                         name: '*/main'
